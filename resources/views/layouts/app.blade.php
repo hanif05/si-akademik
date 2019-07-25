@@ -9,15 +9,15 @@
     <meta name="description" content="">
     <meta name="author" content="">
     <!-- Favicon icon -->
-    <link rel="icon" type="image/png" sizes="16x16" href="../assets/images/favicon.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="{{ asset('asset') }}/assets/images/favicon.png">
     <title>Elite Admin Template - The Ultimate Multipurpose admin template</title>
     <!-- This page CSS -->
     <!-- This page CSS -->
-    <link href="../assets/node_modules/morrisjs/morris.css" rel="stylesheet">
+    <link href="{{ asset('asset') }}/assets/node_modules/morrisjs/morris.css" rel="stylesheet">
     <!-- Custom CSS -->
-    <link href="dist/css/style.min.css" rel="stylesheet">
+    <link href="{{ asset('asset') }}/dist/css/style.min.css" rel="stylesheet">
     <!-- Dashboard 1 Page CSS -->
-    <link href="dist/css/pages/dashboard4.css" rel="stylesheet">
+    <link href="{{ asset('asset') }}/dist/css/pages/dashboard4.css" rel="stylesheet">
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -53,16 +53,16 @@
                     <!-- Logo icon --><b>
                         <!--You can put here icon as well // <i class="wi wi-sunset"></i> //-->
                         <!-- Dark Logo icon -->
-                        <img src="../assets/images/logo-icon.png" alt="homepage" class="dark-logo" />
+                        <img src="{{ asset('asset') }}/assets/images/logo-icon.png" alt="homepage" class="dark-logo" />
                         <!-- Light Logo icon -->
-                        <img src="../assets/images/logo-light-icon.png" alt="homepage" class="light-logo" />
+                        <img src="{{ asset('asset') }}/assets/images/logo-light-icon.png" alt="homepage" class="light-logo" />
                     </b>
                     <!--End Logo icon -->
                     <!-- Logo text --><span>
                          <!-- dark Logo text -->
-                         <img src="../assets/images/logo-text.png" alt="homepage" class="dark-logo" />
+                         <img src="{{ asset('asset') }}/assets/images/logo-text.png" alt="homepage" class="dark-logo" />
                         <!-- Light Logo text -->
-                         <img src="../assets/images/logo-light-text.png" class="light-logo" alt="homepage" /></span> </a>
+                         <img src="{{ asset('asset') }}/assets/images/logo-light-text.png" class="light-logo" alt="homepage" /></span> </a>
             </div>
             <!-- ============================================================== -->
             <!-- End Logo -->
@@ -153,25 +153,25 @@
                                     <div class="message-center">
                                         <!-- Message -->
                                         <a href="javascript:void(0)">
-                                            <div class="user-img"> <img src="../assets/images/users/1.jpg" alt="user" class="img-circle"> <span class="profile-status online pull-right"></span> </div>
+                                            <div class="user-img"> <img src="{{ asset('asset') }}/assets/images/users/1.jpg" alt="user" class="img-circle"> <span class="profile-status online pull-right"></span> </div>
                                             <div class="mail-contnet">
                                                 <h5>Pavan kumar</h5> <span class="mail-desc">Just see the my admin!</span> <span class="time">9:30 AM</span> </div>
                                         </a>
                                         <!-- Message -->
                                         <a href="javascript:void(0)">
-                                            <div class="user-img"> <img src="../assets/images/users/2.jpg" alt="user" class="img-circle"> <span class="profile-status busy pull-right"></span> </div>
+                                            <div class="user-img"> <img src="{{ asset('asset') }}/assets/images/users/2.jpg" alt="user" class="img-circle"> <span class="profile-status busy pull-right"></span> </div>
                                             <div class="mail-contnet">
                                                 <h5>Sonu Nigam</h5> <span class="mail-desc">I've sung a song! See you at</span> <span class="time">9:10 AM</span> </div>
                                         </a>
                                         <!-- Message -->
                                         <a href="javascript:void(0)">
-                                            <div class="user-img"> <img src="../assets/images/users/3.jpg" alt="user" class="img-circle"> <span class="profile-status away pull-right"></span> </div>
+                                            <div class="user-img"> <img src="{{ asset('asset') }}/assets/images/users/3.jpg" alt="user" class="img-circle"> <span class="profile-status away pull-right"></span> </div>
                                             <div class="mail-contnet">
                                                 <h5>Arijit Sinh</h5> <span class="mail-desc">I am a singer!</span> <span class="time">9:08 AM</span> </div>
                                         </a>
                                         <!-- Message -->
                                         <a href="javascript:void(0)">
-                                            <div class="user-img"> <img src="../assets/images/users/4.jpg" alt="user" class="img-circle"> <span class="profile-status offline pull-right"></span> </div>
+                                            <div class="user-img"> <img src="{{ asset('asset') }}/assets/images/users/4.jpg" alt="user" class="img-circle"> <span class="profile-status offline pull-right"></span> </div>
                                             <div class="mail-contnet">
                                                 <h5>Pavan kumar</h5> <span class="mail-desc">Just see the my admin!</span> <span class="time">9:02 AM</span> </div>
                                         </a>
@@ -198,13 +198,13 @@
                                     <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
                                         <div class="carousel-inner" role="listbox">
                                             <div class="carousel-item active">
-                                                <div class="container"> <img class="d-block img-fluid" src="../assets/images/big/img1.jpg" alt="First slide"></div>
+                                                <div class="container"> <img class="d-block img-fluid" src="{{ asset('asset') }}/assets/images/big/img1.jpg" alt="First slide"></div>
                                             </div>
                                             <div class="carousel-item">
-                                                <div class="container"><img class="d-block img-fluid" src="../assets/images/big/img2.jpg" alt="Second slide"></div>
+                                                <div class="container"><img class="d-block img-fluid" src="{{ asset('asset') }}/assets/images/big/img2.jpg" alt="Second slide"></div>
                                             </div>
                                             <div class="carousel-item">
-                                                <div class="container"><img class="d-block img-fluid" src="../assets/images/big/img3.jpg" alt="Third slide"></div>
+                                                <div class="container"><img class="d-block img-fluid" src="{{ asset('asset') }}/assets/images/big/img3.jpg" alt="Third slide"></div>
                                             </div>
                                         </div>
                                         <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev"> <span class="carousel-control-prev-icon" aria-hidden="true"></span> <span class="sr-only">Previous</span> </a>
@@ -311,7 +311,7 @@
             <!-- User Profile-->
             <div class="user-profile">
                 <div class="user-pro-body">
-                    <div><img src="../assets/images/users/2.jpg" alt="user-img" class="img-circle"></div>
+                    <div><img src="{{ asset('asset') }}/assets/images/users/2.jpg" alt="user-img" class="img-circle"></div>
                     <div class="dropdown">
                         <a href="javascript:void(0)" class="dropdown-toggle u-dropdown link hide-menu" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Steave Gection <span class="caret"></span></a>
                         <div class="dropdown-menu animated flipInY">
@@ -535,7 +535,7 @@
                     </li>
                     <li class="nav-small-cap">--- SUPPORT</li>
                     <li>
-                        <a class="waves-effect waves-dark" href="../documentation/documentation.html" aria-expanded="false">
+                        <a class="waves-effect waves-dark" href="{{ asset('asset') }}/documentation/documentation.html" aria-expanded="false">
                             <i class="far fa-circle text-danger"></i>
                             <span class="hide-menu">Documentation</span>
                         </a>
@@ -809,14 +809,14 @@
                                     </div>
                                 </div>
                                 <div class="sl-item">
-                                    <div class="sl-left"> <img class="img-circle" alt="user" src="../assets/images/users/2.jpg"> </div>
+                                    <div class="sl-left"> <img class="img-circle" alt="user" src="{{ asset('asset') }}/assets/images/users/2.jpg"> </div>
                                     <div class="sl-right">
                                         <div class="font-medium">Go to the Doctor <span class="sl-date">5 minutes ago</span></div>
                                         <div class="desc">Contrary to popular belief</div>
                                     </div>
                                 </div>
                                 <div class="sl-item">
-                                    <div class="sl-left"> <img class="img-circle" alt="user" src="../assets/images/users/3.jpg"> </div>
+                                    <div class="sl-left"> <img class="img-circle" alt="user" src="{{ asset('asset') }}/assets/images/users/3.jpg"> </div>
                                     <div class="sl-right">
                                         <div><a href="javascript:void(0)">Tiger Sroff</a> <span class="sl-date">5 minutes ago</span></div>
                                         <div class="desc">Approve meeting with tiger
@@ -991,28 +991,28 @@
                         <ul class="m-t-20 chatonline">
                             <li><b>Chat option</b></li>
                             <li>
-                                <a href="javascript:void(0)"><img src="../assets/images/users/1.jpg" alt="user-img" class="img-circle"> <span>Varun Dhavan <small class="text-success">online</small></span></a>
+                                <a href="javascript:void(0)"><img src="{{ asset('asset') }}/assets/images/users/1.jpg" alt="user-img" class="img-circle"> <span>Varun Dhavan <small class="text-success">online</small></span></a>
                             </li>
                             <li>
-                                <a href="javascript:void(0)"><img src="../assets/images/users/2.jpg" alt="user-img" class="img-circle"> <span>Genelia Deshmukh <small class="text-warning">Away</small></span></a>
+                                <a href="javascript:void(0)"><img src="{{ asset('asset') }}/assets/images/users/2.jpg" alt="user-img" class="img-circle"> <span>Genelia Deshmukh <small class="text-warning">Away</small></span></a>
                             </li>
                             <li>
-                                <a href="javascript:void(0)"><img src="../assets/images/users/3.jpg" alt="user-img" class="img-circle"> <span>Ritesh Deshmukh <small class="text-danger">Busy</small></span></a>
+                                <a href="javascript:void(0)"><img src="{{ asset('asset') }}/assets/images/users/3.jpg" alt="user-img" class="img-circle"> <span>Ritesh Deshmukh <small class="text-danger">Busy</small></span></a>
                             </li>
                             <li>
-                                <a href="javascript:void(0)"><img src="../assets/images/users/4.jpg" alt="user-img" class="img-circle"> <span>Arijit Sinh <small class="text-muted">Offline</small></span></a>
+                                <a href="javascript:void(0)"><img src="{{ asset('asset') }}/assets/images/users/4.jpg" alt="user-img" class="img-circle"> <span>Arijit Sinh <small class="text-muted">Offline</small></span></a>
                             </li>
                             <li>
-                                <a href="javascript:void(0)"><img src="../assets/images/users/5.jpg" alt="user-img" class="img-circle"> <span>Govinda Star <small class="text-success">online</small></span></a>
+                                <a href="javascript:void(0)"><img src="{{ asset('asset') }}/assets/images/users/5.jpg" alt="user-img" class="img-circle"> <span>Govinda Star <small class="text-success">online</small></span></a>
                             </li>
                             <li>
-                                <a href="javascript:void(0)"><img src="../assets/images/users/6.jpg" alt="user-img" class="img-circle"> <span>John Abraham<small class="text-success">online</small></span></a>
+                                <a href="javascript:void(0)"><img src="{{ asset('asset') }}/assets/images/users/6.jpg" alt="user-img" class="img-circle"> <span>John Abraham<small class="text-success">online</small></span></a>
                             </li>
                             <li>
-                                <a href="javascript:void(0)"><img src="../assets/images/users/7.jpg" alt="user-img" class="img-circle"> <span>Hritik Roshan<small class="text-success">online</small></span></a>
+                                <a href="javascript:void(0)"><img src="{{ asset('asset') }}/assets/images/users/7.jpg" alt="user-img" class="img-circle"> <span>Hritik Roshan<small class="text-success">online</small></span></a>
                             </li>
                             <li>
-                                <a href="javascript:void(0)"><img src="../assets/images/users/8.jpg" alt="user-img" class="img-circle"> <span>Pwandeep rajan <small class="text-success">online</small></span></a>
+                                <a href="javascript:void(0)"><img src="{{ asset('asset') }}/assets/images/users/8.jpg" alt="user-img" class="img-circle"> <span>Pwandeep rajan <small class="text-success">online</small></span></a>
                             </li>
                         </ul>
                     </div>
@@ -1045,29 +1045,29 @@
 <!-- ============================================================== -->
 <!-- All Jquery -->
 <!-- ============================================================== -->
-<script src="../assets/node_modules/jquery/jquery-3.2.1.min.js"></script>
+<script src="{{ asset('asset') }}/assets/node_modules/jquery/jquery-3.2.1.min.js"></script>
 <!-- Bootstrap popper Core JavaScript -->
-<script src="../assets/node_modules/popper/popper.min.js"></script>
-<script src="../assets/node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+<script src="{{ asset('asset') }}/assets/node_modules/popper/popper.min.js"></script>
+<script src="{{ asset('asset') }}/assets/node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
 <!-- slimscrollbar scrollbar JavaScript -->
-<script src="dist/js/perfect-scrollbar.jquery.min.js"></script>
+<script src="{{ asset('asset') }}/dist/js/perfect-scrollbar.jquery.min.js"></script>
 <!--Wave Effects -->
-<script src="dist/js/waves.js"></script>
+<script src="{{ asset('asset') }}/dist/js/waves.js"></script>
 <!--Menu sidebar -->
-<script src="dist/js/sidebarmenu.js"></script>
+<script src="{{ asset('asset') }}/dist/js/sidebarmenu.js"></script>
 <!--Custom JavaScript -->
-<script src="dist/js/custom.min.js"></script>
+<script src="{{ asset('asset') }}/dist/js/custom.min.js"></script>
 <!-- ============================================================== -->
 <!-- This page plugins -->
 <!-- ============================================================== -->
 <!--Sky Icons JavaScript -->
-<script src="../assets/node_modules/skycons/skycons.js"></script>
+<script src="{{ asset('asset') }}/assets/node_modules/skycons/skycons.js"></script>
 <!--morris JavaScript -->
-<script src="../assets/node_modules/raphael/raphael-min.js"></script>
-<script src="../assets/node_modules/morrisjs/morris.min.js"></script>
-<script src="../assets/node_modules/jquery-sparkline/jquery.sparkline.min.js"></script>
+<script src="{{ asset('asset') }}/assets/node_modules/raphael/raphael-min.js"></script>
+<script src="{{ asset('asset') }}/assets/node_modules/morrisjs/morris.min.js"></script>
+<script src="{{ asset('asset') }}/assets/node_modules/jquery-sparkline/jquery.sparkline.min.js"></script>
 <!-- Chart JS -->
-<script src="dist/js/dashboard4.js"></script>
+<script src="{{ asset('asset') }}/dist/js/dashboard4.js"></script>
 </body>
 
 </html>
