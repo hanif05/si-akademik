@@ -20,6 +20,4 @@ Route::get('/logout', 'AuthController@logout');
 
 //Route Home
 
-Route::get('/home', function (){
-    return 'login success';
-});
+Route::get('/home', 'HomeController@index');
