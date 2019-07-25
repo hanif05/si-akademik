@@ -21,3 +21,7 @@ Route::get('/logout', 'AuthController@logout');
 //Route Home
 
 Route::get('/home', 'HomeController@index');
+
+
+// Route Guru
+Route::resource('/guru', 'GuruController');
