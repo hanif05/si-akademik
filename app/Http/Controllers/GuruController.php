@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Guru;
 use Illuminate\Http\Request;
+use DataTables;
 
 class GuruController extends Controller
 {
@@ -81,5 +82,22 @@ class GuruController extends Controller
     public function destroy(Guru $guru)
     {
         //
+    }
+
+    public function dataTable()
+    {
+        $data = Guru::query();
+
+        return DataTables::of($data)
+            ->addColumn('aksi', function($data){
+                return view('layouts/includes/_action', [
+                    'data' => $data,
+
+
+                ]);
+            })
+            ->addIndexColumn()
+            ->rawColumns(['aksi'])
+            ->make(true);
     }
 }
