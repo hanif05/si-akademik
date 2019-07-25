@@ -16,6 +16,8 @@
     <link href="{{ asset('asset') }}/assets/node_modules/morrisjs/morris.css" rel="stylesheet">
     <!-- Custom CSS -->
     <link href="{{ asset('asset') }}/dist/css/style.min.css" rel="stylesheet">
+    <!-- DataTables -->
+    <link href="{{ asset('asset') }}/assets/node_modules/datatables/media/css/dataTables.bootstrap4.css" rel="stylesheet">
     <!-- Dashboard 1 Page CSS -->
     <link href="{{ asset('asset') }}/dist/css/pages/dashboard4.css" rel="stylesheet">
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
@@ -103,6 +105,7 @@
 <script src="{{ asset('asset') }}/dist/js/sidebarmenu.js"></script>
 <!--Custom JavaScript -->
 <script src="{{ asset('asset') }}/dist/js/custom.min.js"></script>
+
 <!-- ============================================================== -->
 <!-- This page plugins -->
 <!-- ============================================================== -->
@@ -114,6 +117,9 @@
 <script src="{{ asset('asset') }}/assets/node_modules/jquery-sparkline/jquery.sparkline.min.js"></script>
 <!-- Chart JS -->
 <script src="{{ asset('asset') }}/dist/js/dashboard4.js"></script>
+<!-- This is data table -->
+<script src="{{ asset('asset') }}/assets/node_modules/datatables/datatables.min.js"></script>
+@stack('scripts')
 </body>
 
 </html>

@@ -15,32 +15,60 @@
 	<div class="row">
 		<div class="col-12">
 			<div class="card">
-                            <div class="card-body">
-                                <h4 class="card-title">Data Guru</h4>
-                                <h6 class="card-subtitle">Data semua guru</h6>
-                                <div class="table-responsive m-t-40">
-                                    <table id="myTable" class="table table-bordered table-striped">
-                                        <thead>
-                                            <tr>
-                                                <th>Name</th>
-                                                <th>Position</th>
-                                                <th>Office</th>
-                                                <th>Age</th>
-                                                <th>Start date</th>
-                                                <th>Salary</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
+				<div class="card-body">
+					<h4 class="card-title">Data Guru</h4>
+					<h6 class="card-subtitle">Data semua guru</h6>
+					<div class="table-responsive m-t-40">
+						<table id="datatables" class="table table-bordered table-striped">
+							<thead>
+								<tr>
+									<th>#</th>
+									<th>Nip</th>
+									<th>Nama</th>
+									<th>Jenis Kelamin</th>
+									<th>Tempat Lahir</th>
+									<th>Tanggal Lahir</th>
+									<th>Alamat</th>
+									<th>Telepon</th>
+									<th>Foto</th>
+									<th>Aksi</th>
+								</tr>
+							</thead>
+							<tbody>
 
-                                        </tbody>
-                                    </table>
-                                </div>
-                            </div>
-                        </div>
+							</tbody>
+						</table>
+					</div>
+				</div>
+			</div>
 		</div>
 	</div>
 </div>
 
+@stop
+
+@push('scripts')
+
+    <script >
+        $('#datatables').DataTable({
+            responsive: true,
+            processing: true,
+            serverSide: true,
+            ajax: "{{ route('table.guru') }}",
+            columns: [
+                { data: 'DT_RowIndex', name: 'id' },
+                { data: 'nip', name: 'nip' },
+                { data: 'nama', name: 'nama' },
+                { data: 'jk', name: 'jk' },
+                { data: 'tmpt_lahir', name: 'tmpt_lahir' },
+                { data: 'tgl_lahir', name: 'tgl_lahir' },
+                { data: 'alamat', name: 'alamat' },
+                { data: 'telp', name: 'telp' },
+                { data: 'foto', name: 'foto' },
+                { data: 'aksi', name: 'aksi' }
+            ]
+        });
+    </script>
 
 
-@endsection
+@endpush
