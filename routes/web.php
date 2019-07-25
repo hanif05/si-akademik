@@ -25,3 +25,4 @@ Route::get('/home', 'HomeController@index');
 
 // Route Guru
 Route::resource('/guru', 'GuruController');
+Route::get('/table/guru', 'GuruController@dataTable')->name('table.guru');
