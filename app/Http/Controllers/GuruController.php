@@ -101,6 +101,8 @@ class GuruController extends Controller
             ->addColumn('aksi', function($data){
                 return view('layouts/includes/_action', [
                     'data' => $data,
+                    'url_edit' => route('guru.edit', $data->id),
+                    'url_destroy' => route('guru.destroy', $data->id),
 
 
                 ]);
