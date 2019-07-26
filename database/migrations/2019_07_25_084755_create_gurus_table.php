@@ -22,7 +22,7 @@ class CreateGurusTable extends Migration
             $table->date('tgl_lahir');
             $table->string('alamat');
             $table->string('telp', 15);
-            $table->text('foto');
+            $table->text('foto')->nullable();
             $table->timestamps();
         });
     }
