@@ -16,6 +16,7 @@
     <link href="{{ asset('asset') }}/dist/css/pages/login-register-lock.css" rel="stylesheet">
     <!-- Custom CSS -->
     <link href="{{ asset('asset') }}/dist/css/style.min.css" rel="stylesheet">
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
 
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
@@ -62,7 +63,7 @@
                                     <label class="custom-control-label" for="customCheck1">Remember me</label>
                                 </div>
                                 <div class="ml-auto">
-                                    <a href="javascript:void(0)" id="to-recover" class="text-muted"><i class="fas fa-lock m-r-5"></i> Forgot pwd?</a>
+                                    <a href="javascript:void(0)" id="to-recover" class="text-muted"><i class="fa fa-lock m-r-5"></i> Forgot pwd?</a>
                                 </div>
                             </div>
                         </div>
@@ -126,9 +127,9 @@
     $(function() {
         $('[data-toggle="tooltip"]').tooltip()
     });
-    // ============================================================== 
-    // Login and Recover Password 
-    // ============================================================== 
+    // ==============================================================
+    // Login and Recover Password
+    // ==============================================================
     $('#to-recover').on("click", function() {
         $("#loginform").slideUp();
         $("#recoverform").fadeIn();
