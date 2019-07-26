@@ -15,7 +15,7 @@
 	<div class="row">
 		<div class="col-12">
 			<div class="d-flex justify-content-end text-right">
-				<button class="btn btn-primary" data-toggle="modal" data-target="#responsive-modal">Tambah</button>
+				<button class="btn btn-primary fa fa-plus" data-toggle="modal" data-target="#responsive-modal"></button>
 			</div>
 			<div class="card">
 				<div class="card-body">
@@ -73,7 +73,7 @@
 								<option value="Laki-laki">Laki-laki</option>
 								<option value="Perempuan">Perempuan</option>
 							</select>
-							<small class="form-control-feedback"> Select your gender </small> 
+							<small class="form-control-feedback"> Select your gender </small>
 						</div>
 						<div class="form-group">
 							<label for="tmpt_lahir" class="control-label">Tempat Lahir:</label>
@@ -103,7 +103,7 @@
 								</div>
 							</div>
 						</div>
-					
+
 				</div>
 				<div class="modal-footer">
 					<button type="button" class="btn btn-default waves-effect" data-dismiss="modal">Close</button>
