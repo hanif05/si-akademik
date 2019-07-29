@@ -31,6 +31,16 @@
 								</tr>
 							</thead>
 							<tbody>
+								@foreach($data as $mapel)
+								<tr>
+									<td></td>
+									<td>{{ $mapel->kode }}</td>
+									<td>{{ $mapel->nama }}</td>
+									<td>{</td>
+								</tr>
+
+
+								@endforeach
 
 							</tbody>
 						</table>

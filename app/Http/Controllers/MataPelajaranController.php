@@ -14,7 +14,8 @@ class MataPelajaranController extends Controller
      */
     public function index()
     {
-        return view('pages.matpel.index');
+        $data = MataPelajaran::all();
+        return view('pages.mapel.index', compact('data'));
     }
 
     /**
@@ -35,7 +36,9 @@ class MataPelajaranController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        MataPelajaran::create(request()->all());
+
+        return redirect()->back();
     }
 
     /**
