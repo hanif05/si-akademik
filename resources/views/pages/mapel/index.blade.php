@@ -31,16 +31,6 @@
 								</tr>
 							</thead>
 							<tbody>
-								@foreach($data as $mapel)
-								<tr>
-									<td></td>
-									<td>{{ $mapel->kode }}</td>
-									<td>{{ $mapel->nama }}</td>
-									<td>{</td>
-								</tr>
-
-
-								@endforeach
 
 							</tbody>
 						</table>
@@ -81,3 +71,28 @@
 </div>
 <!-- /.modal -->
 @stop
+
+@push('scripts')
+
+	<script>
+		$('#datatables').DataTable({
+
+			responsive: true,
+			processing: true,
+			serverSide: true,
+			ajax: "{{ route('table.mapel') }}",
+			columns: [
+
+				{ data: 'DT_RowIndex', name: 'id' },
+				{ data: 'kode', name: 'kode' },
+				{ data: 'nama', name: 'nama' },
+				{ data: 'aksi', name: 'aksi' },
+
+
+			]
+		});		
+	</script>
+
+
+
+@endpush
