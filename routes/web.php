@@ -28,3 +28,4 @@ Route::get('/table/guru', 'GuruController@dataTable')->name('table.guru');
 
 // Route Mapel
 Route::resource('/mapel', 'MataPelajaranController')->except('create');
+Route::get('/table/mapel', 'MataPelajaranController@dataTable')->name('table.mapel');
