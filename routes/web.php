@@ -25,3 +25,6 @@ Route::get('/home', 'HomeController@index');
 // Route Guru
 Route::resource('/guru', 'GuruController')->except('create');
 Route::get('/table/guru', 'GuruController@dataTable')->name('table.guru');
+
+// Route Mapel
+Route::resource('/mapel', 'MataPelajaranController')->except('create');
