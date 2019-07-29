@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\MataPelajaran;
 use Illuminate\Http\Request;
+use DataTables;
 
 class MataPelajaranController extends Controller
 {
@@ -84,5 +85,24 @@ class MataPelajaranController extends Controller
     public function destroy(MataPelajaran $mataPelajaran)
     {
         //
+    }
+
+    public function dataTable()
+    {
+        $data = MataPelajaran::query();
+
+        return DataTables::of($data)
+            ->addColumn('aksi', function($data){
+                return view('layouts/includes/_action', [
+
+                    'data' => $data,
+                    'url_edit' => route('mapel.edit', $data->id),
+                    'url_destroy' => route('mapel.destroy', $data->id)
+
+
+                ]);
+            })
+            ->addIndexColumn()
+            ->rawColumns(['aksi'])->make(true);
     }
 }
