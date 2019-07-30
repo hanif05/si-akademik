@@ -19,7 +19,7 @@
                             <!-- text-->
                             <div class="dropdown-divider"></div>
                             <!-- text-->
-                            <a href="pages-login.html" class="dropdown-item"><i class="fas fa-power-off"></i> Logout</a>
+                            <a href="/logout" class="dropdown-item"><i class="fas fa-power-off"></i> Logout</a>
                             <!-- text-->
                         </div>
                     </div>
@@ -28,8 +28,10 @@
             <!-- Sidebar navigation-->
             <nav class="sidebar-nav">
                 <ul id="sidebarnav">
-                    <li class="nav-small-cap">--- PERSONAL</li>
-                    <li> <a class="has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false"><i class="icon-speedometer"></i><span class="hide-menu">Dashboard <span class="badge badge-pill badge-cyan ml-auto">4</span></span></a>
+                    <li class="nav-small-cap">--- DATA</li>
+                    <li> <a class="has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false">
+                            <i class="icon-speedometer"></i>
+                            <span class="hide-menu">Dashboard <span class="badge badge-pill badge-cyan ml-auto">4</span></span></a>
                         <ul aria-expanded="false" class="collapse">
                             <li><a href="index.html">Minimal </a></li>
                             <li><a href="index2.html">Analytical</a></li>
@@ -37,14 +39,13 @@
                             <li><a href="index4.html">Modern</a></li>
                         </ul>
                     </li>
-                    <li> <a class="has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false"><i class="ti-layout-grid2"></i><span class="hide-menu">Apps</span></a>
+                    <li> <a class="has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false"><i class="ti-layout-grid2">
+
+                            </i><span class="hide-menu">Master</span>
+                        </a>
                         <ul aria-expanded="false" class="collapse">
-                            <li><a href="app-calendar.html">Calendar</a></li>
-                            <li><a href="app-chat.html">Chat app</a></li>
-                            <li><a href="app-ticket.html">Support Ticket</a></li>
-                            <li><a href="app-contact.html">Contact / Employee</a></li>
-                            <li><a href="app-contact2.html">Contact Grid</a></li>
-                            <li><a href="app-contact-detail.html">Contact Detail</a></li>
+                            <li><a href="/guru">Guru</a></li>
+                            <li><a href="#">Siswa</a></li>
                         </ul>
                     </li>
                     <li> <a class="has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false"><i class="ti-email"></i><span class="hide-menu">Inbox</span></a>
