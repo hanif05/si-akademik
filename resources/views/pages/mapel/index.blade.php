@@ -54,11 +54,11 @@
 						@csrf
 						<div class="form-group">
 							<label for="kode" class="control-label">Kode:</label>
-							<input type="text" class="form-control" id="kode" name="kode">
+							<input type="text" class="form-control" id="kode" name="kode" value="">
 						</div>
 						<div class="form-group">
 							<label for="nama" class="control-label">Nama:</label>
-							<input type="text" class="form-control" id="nama" name="nama">
+							<input type="text" class="form-control" id="nama" name="nama" value="">
 						</div>
 				</div>
 				<div class="modal-footer">
@@ -90,7 +90,7 @@
 
 
 			]
-		});		
+		});
 	</script>
 
 
