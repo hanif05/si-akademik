@@ -18,19 +18,24 @@ Route::post('/validation', 'AuthController@validation');
 Route::get('/logout', 'AuthController@logout');
 
 
-Route::group(['middleware' => ['auth']], function(){
+Route::group(['middleware' => ['auth', 'checkLevel:1']], function(){
+
+
+	// Route Guru
+	Route::resource('/guru', 'GuruController')->except('create');
+	Route::get('/table/guru', 'GuruController@dataTable')->name('table.guru');
+
+	// Route Mapel
+	Route::resource('/mapel', 'MataPelajaranController');
+	Route::get('/table/mapel', 'MataPelajaranController@dataTable')->name('table.mapel');
+
+});
+
+
+Route::group(['middleware' => ['auth', 'checkLevel:1,2']], function(){
+
 
 	//Route Home
 	Route::get('/home', 'HomeController@index');
 
 });
-
-
-
-// Route Guru
-Route::resource('/guru', 'GuruController')->except('create');
-Route::get('/table/guru', 'GuruController@dataTable')->name('table.guru');
-
-// Route Mapel
-Route::resource('/mapel', 'MataPelajaranController');
-Route::get('/table/mapel', 'MataPelajaranController@dataTable')->name('table.mapel');
