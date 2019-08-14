@@ -120,6 +120,7 @@
 <script src="{{ asset('asset') }}/dist/js/dashboard4.js"></script>
 <!-- This is data table -->
 <script src="{{ asset('asset') }}/assets/node_modules/datatables/datatables.min.js"></script>
+@include('sweetalert::alert')`
 @stack('scripts')
 </body>
 
