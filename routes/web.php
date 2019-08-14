@@ -13,13 +13,18 @@
 
 
 //Route Login
-Route::get('/', 'AuthController@index');
+Route::get('/', 'AuthController@index')->name('login');
 Route::post('/validation', 'AuthController@validation');
 Route::get('/logout', 'AuthController@logout');
 
 
-//Route Home
-Route::get('/home', 'HomeController@index');
+Route::group(['middleware' => ['auth']], function(){
+
+	//Route Home
+	Route::get('/home', 'HomeController@index');
+
+});
+
 
 
 // Route Guru
