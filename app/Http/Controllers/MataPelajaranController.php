@@ -13,9 +13,9 @@ class MataPelajaranController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index(MataPelajaran $mataPelajaran)
+    public function index()
     {
-        return view('pages.mapel.index', compact('mataPelajaran'));
+        return view('pages.mapel.index');
     }
 
     /**
