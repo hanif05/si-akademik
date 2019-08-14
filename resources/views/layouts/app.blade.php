@@ -8,6 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
     <meta name="author" content="">
+    <meta name="csrf-token" content="{{ csrf_token() }}">
     <!-- Favicon icon -->
     <link rel="icon" type="image/png" sizes="16x16" href="{{ asset('asset') }}/assets/images/favicon.png">
     <title>Elite Admin Template - The Ultimate Multipurpose admin template</title>
@@ -18,6 +19,7 @@
     <link href="{{ asset('asset') }}/dist/css/style.min.css" rel="stylesheet">
     <!-- DataTables -->
     <link href="{{ asset('asset') }}/assets/node_modules/datatables/media/css/dataTables.bootstrap4.css" rel="stylesheet">
+    <link href="{{ asset('asset') }}/assets/node_modules/sweetalert/sweetalert.css" rel="stylesheet">
     <!-- Dashboard 1 Page CSS -->
     <link href="{{ asset('asset') }}/dist/css/pages/dashboard4.css" rel="stylesheet">
     <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
@@ -29,7 +31,7 @@
     <![endif]-->
 </head>
 
-<body class="skin-default-dark fixed-layout">
+<body class="skin-default-dark fixed-layout body">
 <!-- ============================================================== -->
 <!-- Preloader - style you can find in spinners.css -->
 <!-- ============================================================== -->
@@ -87,7 +89,13 @@
     <!-- ============================================================== -->
     <!-- End footer -->
     <!-- ============================================================== -->
+    <!-- Modal -->
+        <!-- ============================================================== -->
+        @include('layouts/includes/_modal')
+        <!-- End Modal -->
+        <!-- ============================================================== -->
 </div>
+
 <!-- ============================================================== -->
 <!-- End Wrapper -->
 <!-- ============================================================== -->
@@ -120,7 +128,9 @@
 <script src="{{ asset('asset') }}/dist/js/dashboard4.js"></script>
 <!-- This is data table -->
 <script src="{{ asset('asset') }}/assets/node_modules/datatables/datatables.min.js"></script>
-@include('sweetalert::alert')`
+<script src="{{ asset('asset') }}/assets/node_modules/sweetalert/sweetalert.min.js"></script>
+<script src="{{ asset('js/app.js') }}"></script>
+@include('sweetalert::alert')
 @stack('scripts')
 </body>
 

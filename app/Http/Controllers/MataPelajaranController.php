@@ -25,7 +25,9 @@ class MataPelajaranController extends Controller
      */
     public function create()
     {
-        //
+        $mapel = new MataPelajaran();
+
+        return view('pages/mapel/form', compact('mapel'));
     }
 
     /**
@@ -36,9 +38,9 @@ class MataPelajaranController extends Controller
      */
     public function store(Request $request)
     {
-        MataPelajaran::create(request()->all());
+        $data = MataPelajaran::create(request()->all());
 
-        return redirect()->back();
+        return $data;
     }
 
     /**
@@ -47,7 +49,7 @@ class MataPelajaranController extends Controller
      * @param  \App\MataPelajaran  $mataPelajaran
      * @return \Illuminate\Http\Response
      */
-    public function show(MataPelajaran $mataPelajaran)
+    public function show(MataPelajaran $mapel)
     {
         //
     }
@@ -58,9 +60,9 @@ class MataPelajaranController extends Controller
      * @param  \App\MataPelajaran  $mataPelajaran
      * @return \Illuminate\Http\Response
      */
-    public function edit(MataPelajaran $mataPelajaran)
+    public function edit(MataPelajaran $mapel)
     {
-        //
+        return view('pages/mapel/form', compact('mapel'));
     }
 
     /**
@@ -70,9 +72,9 @@ class MataPelajaranController extends Controller
      * @param  \App\MataPelajaran  $mataPelajaran
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, MataPelajaran $mataPelajaran)
+    public function update(Request $request, MataPelajaran $mapel)
     {
-        //
+        $mapel->update(request()->all());
     }
 
     /**
@@ -81,9 +83,10 @@ class MataPelajaranController extends Controller
      * @param  \App\MataPelajaran  $mataPelajaran
      * @return \Illuminate\Http\Response
      */
-    public function destroy(MataPelajaran $mataPelajaran)
+    public function destroy($id)
     {
-        //
+        $model = MataPelajaran::findOrFail($id);
+        $model->delete();   
     }
 
     public function dataTable()

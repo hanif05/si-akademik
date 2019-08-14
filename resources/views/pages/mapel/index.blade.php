@@ -14,7 +14,7 @@
 	<div class="row">
 		<div class="col-12">
 			<div class="d-flex justify-content-end text-right">
-				<button class="btn btn-primary fa fa-plus" data-toggle="modal" data-target="#responsive-modal"></button>
+				<a href="/mapel/create" class="btn btn-primary fa fa-plus modal-show" title="Tambah Data"></a>
 			</div>
 			<div class="card">
 				<div class="card-body">
@@ -41,35 +41,6 @@
 	</div>
 </div>
 
-<!-- Modal -->
-<div id="responsive-modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
-	<div class="modal-dialog">
-		<div class="modal-content">
-			<div class="modal-header">
-				<h4 class="modal-title">Tambah Data Mata Pelajaran</h4>
-				<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-			</div>
-			<form action="{{ route('mapel.store') }}" method="POST">
-				<div class="modal-body">
-						@csrf
-						<div class="form-group">
-							<label for="kode" class="control-label">Kode:</label>
-							<input type="text" class="form-control" id="kode" name="kode" value="">
-						</div>
-						<div class="form-group">
-							<label for="nama" class="control-label">Nama:</label>
-							<input type="text" class="form-control" id="nama" name="nama" value="">
-						</div>
-				</div>
-				<div class="modal-footer">
-					<button type="button" class="btn btn-default waves-effect" data-dismiss="modal">Close</button>
-					<button type="submit" class="btn btn-danger waves-effect waves-light">Save</button>
-				</div>
-			</form>
-		</div>
-	</div>
-</div>
-<!-- /.modal -->
 @stop
 
 @push('scripts')
