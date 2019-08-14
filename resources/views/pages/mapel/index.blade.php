@@ -5,7 +5,7 @@
 <div class="container-fluid">
 	<div class="row page-titles">
 		<div class="col-md-5 align-self-center">
-			<h4 class="text-themecolor">Datatable</h4>
+			<h4 class="text-themecolor">Data Mata Pelajaran</h4>
 		</div>
 		<div class="col-md-7 align-self-center text-right">
 
