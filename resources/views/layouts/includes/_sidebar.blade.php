@@ -9,14 +9,6 @@
                             <!-- text-->
                             <a href="javascript:void(0)" class="dropdown-item"><i class="ti-user"></i> My Profile</a>
                             <!-- text-->
-                            <a href="javascript:void(0)" class="dropdown-item"><i class="ti-wallet"></i> My Balance</a>
-                            <!-- text-->
-                            <a href="javascript:void(0)" class="dropdown-item"><i class="ti-email"></i> Inbox</a>
-                            <!-- text-->
-                            <div class="dropdown-divider"></div>
-                            <!-- text-->
-                            <a href="javascript:void(0)" class="dropdown-item"><i class="ti-settings"></i> Account Setting</a>
-                            <!-- text-->
                             <div class="dropdown-divider"></div>
                             <!-- text-->
                             <a href="/logout" class="dropdown-item"><i class="fas fa-power-off"></i> Logout</a>
@@ -29,15 +21,9 @@
             <nav class="sidebar-nav">
                 <ul id="sidebarnav">
                     <li class="nav-small-cap">--- DATA</li>
-                    <li> <a class="has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false">
+                    <li> <a class="" href="/home">
                             <i class="icon-speedometer"></i>
-                            <span class="hide-menu">Dashboard <span class="badge badge-pill badge-cyan ml-auto">4</span></span></a>
-                        <ul aria-expanded="false" class="collapse">
-                            <li><a href="index.html">Minimal </a></li>
-                            <li><a href="index2.html">Analytical</a></li>
-                            <li><a href="index3.html">Demographical</a></li>
-                            <li><a href="index4.html">Modern</a></li>
-                        </ul>
+                            <span class="hide-menu">Home</span></a>
                     </li>
                     <li> <a class="has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false"><i class="ti-layout-grid2">
 
@@ -48,12 +34,7 @@
                             <li><a href="#">Siswa</a></li>
                         </ul>
                     </li>
-                    <li> <a class="has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false"><i class="ti-email"></i><span class="hide-menu">Inbox</span></a>
-                        <ul aria-expanded="false" class="collapse">
-                            <li><a href="app-email.html">Mailbox</a></li>
-                            <li><a href="app-email-detail.html">Mailbox Detail</a></li>
-                            <li><a href="app-compose.html">Compose Mail</a></li>
-                        </ul>
+                    <li> <a class="" href="/mapel" aria-expanded="false"><i class="fa fa-book"></i><span class="hide-menu">Mata Pelajaran</span></a>
                     </li>
                     <li> <a class="has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false"><i class="ti-palette"></i><span class="hide-menu">Ui Elements <span class="badge badge-pill badge-primary text-white ml-auto">25</span></span></a>
                         <ul aria-expanded="false" class="collapse">
