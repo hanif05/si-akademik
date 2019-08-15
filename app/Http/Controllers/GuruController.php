@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 use App\Guru;
+use App\User;
 use Illuminate\Http\Request;
 use DataTables;
 use Alert;
@@ -43,6 +44,14 @@ class GuruController extends Controller
         //     'nip' => 'required|max:12',
 
         // ]);
+
+        $user = new User;
+        $user->level_id = '2';
+        $user->name = $request->nama;
+        $user->email = $request->email;
+        $user->password = bcrypt('password');
+        $user->remember_token = str_random(60);
+        $user->save();
 
         $data = Guru::create(request()->all());
         
