@@ -6,6 +6,7 @@ use App\User;
 use Illuminate\Http\Request;
 use DataTables;
 use Alert;
+use Intervention\Image\Facades\Image;
 
 class GuruController extends Controller
 {
@@ -45,6 +46,19 @@ class GuruController extends Controller
 
         // ]);
 
+        $data = request()->validate([
+
+            'nip' => 'required',
+            'nama' => 'required',
+            'jk' => 'required',
+            'tmpt_lahir' => 'required',
+            'tgl_lahir' => 'required',
+            'telp' => 'required',
+            'alamat' => 'required',
+            'foto' => ['required', 'image'],
+
+        ]);
+
         $user = new User;
         $user->level_id = '2';
         $user->name = $request->nama;
@@ -53,10 +67,28 @@ class GuruController extends Controller
         $user->remember_token = str_random(60);
         $user->save();
 
+        // Foto
+        $imagePath = request('foto')->store('uploads', 'public');
+
+        $image = Image::make(public_path("storage/{$imagePath}"))->fit(400, 400);
+        $image->save();
+
         //insert tabel siswa
         $request->request->add ([ 'user_id' => $user->id ]);
 
-        $data = Guru::create($request->all());
+        Guru::create([
+            'nip' => $data['nip'],
+            'nama' => $data['nama'],
+            'jk' => $data['jk'],
+            'tmpt_lahir' => $data['tmpt_lahir'],
+            'tgl_lahir' => $data['tgl_lahir'],
+            'telp' => $data['telp'],
+            'alamat' => $data['alamat'],
+            'user_id' => $user['id'],
+            'foto' => $imagePath
+        ]);
+        
+
         return redirect('/guru')->with('berhasil', 'Data berhasil di simpan');
 
 
