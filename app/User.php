@@ -41,4 +41,9 @@ class User extends Authenticatable
     {
         return $this->belongsTo(Level::class);
     }
+
+    public function guru()
+    {
+        return $this->hasOne(Guru::class);
+    }
 }

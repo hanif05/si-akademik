@@ -9,4 +9,17 @@ class Guru extends Model
     protected $table = 'guru';
 
     protected $fillable = ['nip', 'user_id', 'nama', 'jk', 'tmpt_lahir', 'tgl_lahir', 'telp', 'alamat', 'foto'];
+
+    public function user()
+    {
+    	return $this->belongsTo(User::class);
+    }
+
+    public function profileImage()
+    {
+        $imagePath = ($this->image) ? $this->image : 'uploads/6FbQUuCmOcVPNkBFi87dPD8pEgl8Ni1wvynaRCtw.png';
+
+        return '/storage/' . $imagePath;
+
+    }
 }

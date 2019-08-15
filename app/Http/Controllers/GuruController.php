@@ -68,7 +68,7 @@ class GuruController extends Controller
         $user->save();
 
         // Foto
-        $imagePath = request('foto')->store('uploads', 'public');
+        $imagePath = request('foto')->store('uploads/guru', 'public');
 
         $image = Image::make(public_path("storage/{$imagePath}"))->fit(400, 400);
         $image->save();
@@ -154,8 +154,12 @@ class GuruController extends Controller
 
                 ]);
             })
+            ->addColumn('foto', function($data){
+                $url = asset('/storage/'. $data->foto);
+                return '<img src="'.$url.'" border="0" width="50" class="img-rounded" align="center" />';
+            })
             ->addIndexColumn()
-            ->rawColumns(['aksi'])
+            ->rawColumns(['foto', 'aksi'])
             ->make(true);
     }
 }
