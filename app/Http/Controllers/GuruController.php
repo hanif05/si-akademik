@@ -53,8 +53,10 @@ class GuruController extends Controller
         $user->remember_token = str_random(60);
         $user->save();
 
-        $data = Guru::create(request()->all());
-        
+        //insert tabel siswa
+        $request->request->add ([ 'user_id' => $user->id ]);
+
+        $data = Guru::create($request->all());
         return redirect('/guru')->with('berhasil', 'Data berhasil di simpan');
 
 

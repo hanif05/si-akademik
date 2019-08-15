@@ -20,6 +20,10 @@
 						<input type="text" class="form-control" id="nip" name="nip">
 					</div>
 					<div class="form-group">
+						<label for="email" class="control-label">Email</label>
+						<input type="email" class="form-control" id="email" name="email">
+					</div>
+					<div class="form-group">
 						<label for="nama" class="control-label">Nama</label>
 						<input type="text" class="form-control" id="nama" name="nama">
 					</div>
