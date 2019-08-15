@@ -43,7 +43,7 @@ $('#modal-btn-save').click(function(event){
 			$('#modal').modal('hide');
 			$('#datatables').DataTable().ajax.reload();
 
-			swal({
+			Swal.fire({
 				type: 'success',
 				title: 'Berhasil!',
 				text: 'Data Berhasil Di Simpan!'
@@ -77,7 +77,7 @@ $('body').on('click', '.btn-delete', function(event){
 		title = me.attr('title'),
 		csrf_token = $('meta[name="csrf-token"]').attr('content');	
 
-	swal({
+	Swal.fire({
 		title: 'Peringatan!!' ,
 		text: 'Apakah Anda Yakin Ingin Menghapus Data ' + title + '?' ,
 		type: 'warning',
@@ -99,14 +99,14 @@ $('body').on('click', '.btn-delete', function(event){
 				success: function(response){
 					$('#datatables').DataTable().ajax.reload();
 
-					swal({
+					Swal.fire({
 						type: 'success',
 						title: 'Berhasil',
 						text: 'Data Berhasil Di Hapus'
 					});
 				},
 				error: function(xhr){
-					swal({
+					Swal.fire({
 						type: 'error',
 						title: 'Ooppss...',
 						text: 'Something Wrong!'

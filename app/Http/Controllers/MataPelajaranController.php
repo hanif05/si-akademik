@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use App\MataPelajaran;
 use Illuminate\Http\Request;
 use DataTables;
-
+use Alert;
 class MataPelajaranController extends Controller
 {
     /**

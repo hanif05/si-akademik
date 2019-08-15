@@ -21,11 +21,12 @@ Route::get('/logout', 'AuthController@logout');
 Route::group(['middleware' => ['auth', 'checkLevel:1']], function(){
 
 
-	// Route Guru
-	Route::resource('/guru', 'GuruController')->except('create');
+	// Route Data Guru
+	Route::resource('/guru', 'GuruController');
+	Route::post('/guru/{guru}', 'GuruController@update')->name('guru/update');
 	Route::get('/table/guru', 'GuruController@dataTable')->name('table.guru');
 
-	// Route Mapel
+	// Route Data Mapel
 	Route::resource('/mapel', 'MataPelajaranController');
 	Route::get('/table/mapel', 'MataPelajaranController@dataTable')->name('table.mapel');
 

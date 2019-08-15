@@ -1,10 +1,10 @@
 <?php
 
 namespace App\Http\Controllers;
-
 use App\Guru;
 use Illuminate\Http\Request;
 use DataTables;
+use Alert;
 
 class GuruController extends Controller
 {
@@ -25,7 +25,9 @@ class GuruController extends Controller
      */
     public function create()
     {
-        //
+        $guru = new Guru();
+
+        return view('pages/guru/form2', compact('guru'));
     }
 
     /**
@@ -34,7 +36,7 @@ class GuruController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store()
+    public function store(Request $request)
     {
         // $data = request()->validate([
 
@@ -42,8 +44,9 @@ class GuruController extends Controller
 
         // ]);
 
-        Guru::create(request()->all());
-        return redirect()->back();
+        $data = Guru::create(request()->all());
+        
+        return redirect('/guru')->with('berhasil', 'Data berhasil di simpan');
 
 
     }
@@ -67,7 +70,7 @@ class GuruController extends Controller
      */
     public function edit(Guru $guru)
     {
-        //
+        return view('pages/guru/edit', compact('guru'));
     }
 
     /**
@@ -79,7 +82,8 @@ class GuruController extends Controller
      */
     public function update(Request $request, Guru $guru)
     {
-        //
+        $guru->update(request()->all());
+        return redirect('/guru')->with('berhasil', 'Data berhasil disimpan');
     }
 
     /**
@@ -90,7 +94,7 @@ class GuruController extends Controller
      */
     public function destroy(Guru $guru)
     {
-        //
+        $guru->delete();
     }
 
     public function dataTable()
@@ -99,10 +103,10 @@ class GuruController extends Controller
 
         return DataTables::of($data)
             ->addColumn('aksi', function($data){
-                return view('layouts/includes/_action', [
+                return view('layouts/includes/_action2', [
                     'data' => $data,
-                    'url_edit' => route('guru.edit', $data->id),
-                    'url_destroy' => route('guru.destroy', $data->id),
+                    'url_edit2' => route('guru.edit', $data->id),
+                    'url_destroy2' => route('guru.destroy', $data->id),
 
 
                 ]);
