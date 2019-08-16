@@ -28,6 +28,15 @@
 						<input type="text" class="form-control" id="nama" name="nama">
 					</div>
 					<div class="form-group">
+						<label class="control-label">Mata Pelajaran</label>
+						<select class="form-control" name="mata_pelajaran_id">
+							@foreach($mapel as $d_mapel)
+							<option value="{{ $d_mapel->id }}">{{ $d_mapel->nama }}</option>
+							@endforeach
+						</select>
+						<small class="form-control-feedback"> Pilih Mata Pelajaran Yang Diajarkan </small>
+					</div>
+					<div class="form-group">
 						<label class="control-label">Jenis Kelamin</label>
 						<select class="form-control" name="jk">
 							<option value="Laki-laki">Laki-laki</option>

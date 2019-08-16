@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 use App\Guru;
 use App\User;
+use App\MataPelajaran;
 use Illuminate\Http\Request;
 use DataTables;
 use Alert;
@@ -28,8 +29,9 @@ class GuruController extends Controller
     public function create()
     {
         $guru = new Guru();
+        $mapel = MataPelajaran::all();
 
-        return view('pages/guru/form2', compact('guru'));
+        return view('pages/guru/form2', compact('guru', 'mapel'));
     }
 
     /**
@@ -50,6 +52,7 @@ class GuruController extends Controller
 
             'nip' => 'required',
             'nama' => 'required',
+            'mata_pelajaran_id' => 'required',
             'jk' => 'required',
             'tmpt_lahir' => 'required',
             'tgl_lahir' => 'required',
@@ -79,6 +82,7 @@ class GuruController extends Controller
         Guru::create([
             'nip' => $data['nip'],
             'nama' => $data['nama'],
+            'mata_pelajaran_id' => $data['mata_pelajaran_id'],
             'jk' => $data['jk'],
             'tmpt_lahir' => $data['tmpt_lahir'],
             'tgl_lahir' => $data['tgl_lahir'],
