@@ -24,6 +24,10 @@
 						<input type="text" class="form-control" id="nama" name="nama" value="{{ $d_guru->nama }}" readonly="">
 					</div>
 					<div class="form-group">
+						<label for="mata_pelajaran_id" class="control-label">Mata Pelajaran</label>
+						<input type="text" class="form-control" id="mata_pelajaran_id" name="mata_pelajaran_id" value="{{ $d_guru->mataPelajaran->nama }}" readonly="">
+					</div>
+					<div class="form-group">
 						<label for="pokok_bahasan" class="control-label">Pokok Bahasan</label>
 						<textarea class="form-control" id="pokok_bahasan" name="pokok_bahasan"></textarea>
 					</div>

@@ -32,7 +32,6 @@ class MateriController extends Controller
 
         $d_guru = Guru::findOrFail($guru);
 
-
         return view('pages/materi/form', compact('d_guru'));
     }
 
