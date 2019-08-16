@@ -14,4 +14,9 @@ class MataPelajaran extends Model
     {
     	return $this->hasOne(Materi::class);
     }
+
+    public function guru()
+    {
+    	return $this->hasOne(Materi::class);
+    }
 }
