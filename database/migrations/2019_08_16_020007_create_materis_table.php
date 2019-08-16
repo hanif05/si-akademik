@@ -15,7 +15,7 @@ class CreateMaterisTable extends Migration
     {
         Schema::create('materi', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->unsignedBigInteger('mataPelajaran_id');
+            $table->unsignedBigInteger('mata_pelajaran_id');
             $table->unsignedBigInteger('guru_id');
             $table->string('pokok_bahasan');
             $table->string('keterangan');

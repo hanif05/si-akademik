@@ -8,7 +8,7 @@ class Guru extends Model
 {
     protected $table = 'guru';
 
-    protected $fillable = ['nip', 'user_id', 'nama', 'jk', 'tmpt_lahir', 'tgl_lahir', 'telp', 'alamat', 'foto'];
+    protected $fillable = ['nip', 'user_id', 'mata_pelajaran_id', 'nama', 'jk', 'tmpt_lahir', 'tgl_lahir', 'telp', 'alamat', 'foto'];
 
     public function user()
     {
@@ -18,6 +18,11 @@ class Guru extends Model
     public function materi()
     {
         return $this->hasOne(Materi::class);
+    }
+
+    public function mataPelajaran()
+    {
+        return $this->belongsTo(MataPelajaran::class);
     }
 
     // public function profileImage()
