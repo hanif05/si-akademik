@@ -46,6 +46,13 @@ Route::group(['middleware' => ['auth', 'checkLevel:1']], function(){
 });
 
 
+Route::group(['middleware' => ['auth', 'checkLevel:2']], function(){
+
+	// Route Materi Pelajaran
+	Route::resource('/materi', 'MateriController');
+
+});
+
 Route::group(['middleware' => ['auth', 'checkLevel:1,2']], function(){
 
 

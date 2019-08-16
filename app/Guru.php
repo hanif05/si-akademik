@@ -15,6 +15,11 @@ class Guru extends Model
     	return $this->belongsTo(User::class);
     }
 
+    public function materi()
+    {
+        return $this->hasOne(Materi::class);
+    }
+
     // public function profileImage()
     // {
     //     $imagePath = ($this->foto) ? $this->foto : 'uploads/6FbQUuCmOcVPNkBFi87dPD8pEgl8Ni1wvynaRCtw.png';

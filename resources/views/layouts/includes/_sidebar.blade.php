@@ -25,6 +25,12 @@
                             <i class="icon-speedometer"></i>
                             <span class="hide-menu">Home</span></a>
                     </li>
+                    @if(auth()->user()->level_id == '2')
+                    <li> <a class="" href="/materi">
+                            <i class="fa fa-book"></i>
+                            <span class="hide-menu">Materi</span></a>
+                    </li>
+                    @endif
                     @if(auth()->user()->level_id == '1')
                     <li> <a class="has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false"><i class="ti-layout-grid2">
 
