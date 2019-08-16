@@ -30,6 +30,19 @@ Route::group(['middleware' => ['auth', 'checkLevel:1']], function(){
 	Route::resource('/mapel', 'MataPelajaranController');
 	Route::get('/table/mapel', 'MataPelajaranController@dataTable')->name('table.mapel');
 
+	// Route Data Kelas
+	// Route::resource('/kelas', 'KelasController');
+	Route::get('/kelas/create', 'KelasController@create')->name('kelas.create');
+	Route::get('/kelas', 'KelasController@index')->name('kelas.index');
+	Route::post('/kelas', 'KelasController@store')->name('kelas.store');
+	Route::delete('/kelas/{kelas}', 'KelasController@destroy')->name('kelas.destroy');
+	Route::put('kelas/{kelas}', 'KelasController@update')->name('kelas.update');
+	Route::get('/kelas/{kelas}', 'KelasController@show')->name('kelas.show');
+	Route::get('/kelas/{kelas}/edit', 'KelasController@edit')->name('kelas.edit');
+	Route::get('/table/kelas', 'KelasController@dataTable')->name('table.kelas');
+
+
+
 });
 
 

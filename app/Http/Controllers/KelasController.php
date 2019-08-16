@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Kelas;
 use Illuminate\Http\Request;
+use Alert;
+use DataTables;
 
 class KelasController extends Controller
 {
@@ -24,7 +26,9 @@ class KelasController extends Controller
      */
     public function create()
     {
-        //
+        $kelas = new Kelas;
+
+        return view('pages.kelas.form', compact('kelas'));
     }
 
     /**
@@ -35,7 +39,9 @@ class KelasController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $data = Kelas::create(request()->all());
+
+        return $data;
     }
 
     /**
@@ -57,7 +63,7 @@ class KelasController extends Controller
      */
     public function edit(Kelas $kelas)
     {
-        //
+        return view('pages.kelas.form', compact('kelas'));
     }
 
     /**
@@ -69,7 +75,8 @@ class KelasController extends Controller
      */
     public function update(Request $request, Kelas $kelas)
     {
-        //
+        $kelas->update(request()->all());
+
     }
 
     /**
@@ -80,6 +87,26 @@ class KelasController extends Controller
      */
     public function destroy(Kelas $kelas)
     {
-        //
+        $kelas->delete();
     }
+
+    public function dataTable()
+    {
+        $data = Kelas::query();
+
+        return DataTables::of($data)
+            ->addColumn('aksi', function($data){
+                return view('layouts.includes._action', [
+
+                    'data' => $data,
+                    'url_edit' => route('kelas.edit', $data->id),
+                    'url_destroy' => route('kelas.destroy', $data->id)
+                ]);
+            })
+            ->addIndexColumn()
+            ->rawColumns(['aksi'])->make(true);
+    }
+
+
+
 }
