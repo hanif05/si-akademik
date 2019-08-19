@@ -54,7 +54,7 @@
 			columns: [
 
 				{ data: 'DT_RowIndex', name: 'id' },
-				{ data: 'nama', name: 'nama' },
+				{ data: 'nama_kelas', name: 'nama_kelas' },
 				{ data: 'aksi', name: 'aksi' },
 
 

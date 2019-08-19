@@ -8,7 +8,7 @@
 !!}
 	<div class="form-group">
 		<label for="nama" class="control-label">Nama:</label>
-		{!! Form::text('nama', null, ['class' => 'form-control', 'id' => 'nama', 'placeholder' => 'Masukan Nama Kelas']) !!}
+		{!! Form::text('nama_kelas', null, ['class' => 'form-control', 'id' => 'nama_kelas', 'placeholder' => 'Masukan Nama Kelas']) !!}
 	</div>
 </div>
 {!! Form::close() !!}
