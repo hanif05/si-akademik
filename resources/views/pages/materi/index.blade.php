@@ -26,10 +26,10 @@
 								<tr>
 									<th>#</th>
 									<th>Nama Guru</th>
-									<th>Mata Pelajaran</th>
+									<th>Kode Mata Pelajaran</th>
 									<th>Pokok Bahasan</th>
 									<th>Keterangan</th>
-									<th>Aksi</th>
+									<th>Tanggal</th>
 								</tr>
 							</thead>
 							<tbody>
@@ -47,23 +47,26 @@
 
 @push('scripts')
 
-	<!-- <script>
+	<script>
 		$('#datatables').DataTable({
 
 			responsive: true,
 			processing: true,
 			serverSide: true,
-			ajax: "{{ route('table.kelas') }}",
+			ajax: "{{ route('table.materi') }}",
 			columns: [
 
-				{ data: 'DT_RowIndex', name: 'id' },
-				{ data: 'nama', name: 'nama' },
-				{ data: 'aksi', name: 'aksi' },
+				{ data: 'DT_RowIndex', name: 'materi.id' },
+				{ data: 'nama', name: 'guru.nama' },
+				{ data: 'kode', name: 'mata_pelajaran.kode' },
+				{ data: 'pokok_bahasan', name: 'materi.pokok_bahasan' },
+				{ data: 'keterangan', name: 'materi.keterangan' },
+				{ data: 'created_at', name: 'materi.created_at' },
 
 
 			]
 		});
-	</script> -->
+	</script>
 
 
 

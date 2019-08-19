@@ -43,7 +43,28 @@ class MateriController extends Controller
      */
     public function store(Request $request)
     {
-        //
+
+        $data = request()->validate([
+
+            'pokok_bahasan' => 'required',
+            'keterangan' => 'required'
+        ]);
+
+        $mapel = auth()->user()->guru->mata_pelajaran_id;
+
+        $d_guru = auth()->user()->guru->id;
+
+        Materi::create([
+
+            'guru_id' => $d_guru,
+            'mata_pelajaran_id' => $mapel,
+            'pokok_bahasan' => $data['pokok_bahasan'],
+            'keterangan' => $data['keterangan']
+
+
+        ]);
+
+        return redirect('/materi')->with('berhasil', 'Data berhasil di simpan');
     }
 
     /**
@@ -90,4 +111,21 @@ class MateriController extends Controller
     {
         //
     }
+
+    public function dataTable()
+    {
+
+        $data = Materi::join('guru', 'materi.guru_id', '=', 'guru.id')
+            ->join('mata_pelajaran', 'materi.mata_pelajaran_id', '=', 'mata_pelajaran.id')
+            ->select(['materi.id', 'guru.nama', 'mata_pelajaran.kode', 'materi.pokok_bahasan', 'materi.keterangan', 'materi.created_at'])
+            ->orderBy('materi.created_at', 'DESC');
+
+
+
+        return DataTables::of($data)
+            ->addIndexColumn()
+            ->make(true);
+    }
+
+
 }

@@ -50,6 +50,7 @@ Route::group(['middleware' => ['auth', 'checkLevel:2']], function(){
 
 	// Route Materi Pelajaran
 	Route::resource('/materi', 'MateriController');
+	Route::get('/table/materi', 'MateriController@dataTable')->name('table.materi');
 
 });
 
