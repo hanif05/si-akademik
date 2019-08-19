@@ -1,7 +1,9 @@
 @extends('layouts.app')
 
 @section('content')
-
+@if(session('berhasil'))
+	{{alertsukses()}}
+@endif
 <div class="container-fluid">
 	<div class="row page-titles">
 		<div class="col-md-5 align-self-center">
