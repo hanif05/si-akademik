@@ -26,7 +26,10 @@ class LevelSeeder extends Seeder
                 ],
                 [
                     'name' => 'Guru',
-                ]
+                ],
+                [
+                    'name' => 'Siswa',
+                ],
 
             ]);
 
