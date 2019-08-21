@@ -66,7 +66,7 @@ class SiswaController extends Controller
         $user->save();
 
          // Foto
-        $imagePath = request('foto')->store('uploads/guru', 'public');
+        $imagePath = request('foto')->store('uploads/siswa', 'public');
 
         $image = Image::make(public_path("storage/{$imagePath}"))->fit(400, 400);
         $image->save();
