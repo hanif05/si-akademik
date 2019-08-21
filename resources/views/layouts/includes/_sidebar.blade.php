@@ -38,7 +38,7 @@
                         </a>
                         <ul aria-expanded="false" class="collapse">
                             <li><a href="/guru">Guru</a></li>
-                            <li><a href="#">Siswa</a></li>
+                            <li><a href="/siswa">Siswa</a></li>
                         </ul>
                     </li>
                     <li> <a class="" href="/mapel" aria-expanded="false"><i class="fa fa-book"></i><span class="hide-menu">Mata Pelajaran</span></a>

@@ -26,6 +26,11 @@ Route::group(['middleware' => ['auth', 'checkLevel:1']], function(){
 	Route::post('/guru/{guru}', 'GuruController@update')->name('guru/update');
 	Route::get('/table/guru', 'GuruController@dataTable')->name('table.guru');
 
+	// Route Siswa
+	Route::resource('/siswa', 'SiswaController')->except(['update']);
+	Route::post('/siswa/{siswa}', 'SiswaController@update')->name('siswa.update');
+	Route::get('/table/siswa', 'SiswaController@dataTable')->name('table.siswa');
+
 	// Route Data Mapel
 	Route::resource('/mapel', 'MataPelajaranController');
 	Route::get('/table/mapel', 'MataPelajaranController@dataTable')->name('table.mapel');
@@ -54,7 +59,7 @@ Route::group(['middleware' => ['auth', 'checkLevel:2']], function(){
 
 });
 
-Route::group(['middleware' => ['auth', 'checkLevel:1,2']], function(){
+Route::group(['middleware' => ['auth', 'checkLevel:1,2,3']], function(){
 
 
 	//Route Home
