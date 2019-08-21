@@ -64,5 +64,8 @@ Route::group(['middleware' => ['auth', 'checkLevel:1,2,3']], function(){
 
 	//Route Home
 	Route::get('/home', 'HomeController@index');
+	Route::get('/profile', 'ProfileController@index');
+	Route::post('/profile/{guru}', 'ProfileController@updateGuru')->name('profileguru.update');
+	Route::post('/profile/{siswa}', 'ProfileController@updateSiswa')->name('profilesiswa.update');
 
 });
