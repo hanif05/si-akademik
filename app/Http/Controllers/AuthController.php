@@ -15,7 +15,14 @@ class AuthController extends Controller
     public function validation()
     {
         if (Auth::attempt(request()->only('email', 'password'))){
-            return redirect('/home');
+            $u = auth()->user()->level_id;
+            if($u == "1"){
+                return redirect('/home');
+            } else if ($u == "2") {
+                return redirect('/profile');   
+            } else if ($u == "3") {
+                return redirect('/profile');   
+            }
         }
 
         return redirect('/');
