@@ -35,6 +35,10 @@ Route::group(['middleware' => ['auth', 'checkLevel:1']], function(){
 	Route::resource('/mapel', 'MataPelajaranController');
 	Route::get('/table/mapel', 'MataPelajaranController@dataTable')->name('table.mapel');
 
+	// Route Data Hari
+	Route::resource('/hari', 'HariController');
+	Route::get('/table/hari', 'HariController@dataTable')->name('table.hari');
+
 	// Route Data Kelas
 	// Route::resource('/kelas', 'KelasController');
 	Route::get('/kelas/create', 'KelasController@create')->name('kelas.create');
