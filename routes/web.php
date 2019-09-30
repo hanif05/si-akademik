@@ -11,9 +11,12 @@
 |
 */
 
+// Route Front
+Route::get('/', 'FrontController')->name('front.index');
+
 
 //Route Login
-Route::get('/', 'AuthController@index')->name('login');
+Route::get('/login', 'AuthController@index')->name('login');
 Route::post('/validation', 'AuthController@validation');
 Route::get('/logout', 'AuthController@logout');
 
