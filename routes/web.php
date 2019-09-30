@@ -12,7 +12,7 @@
 */
 
 // Route Front
-Route::get('/', 'FrontController')->name('front.index');
+Route::get('/', 'FrontController@index')->name('front.index');
 
 
 //Route Login
