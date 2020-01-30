@@ -13,4 +13,12 @@ class FrontController extends Controller
         
         return view('pages.front.index', compact('post'));
     }
+
+    public function singleBlog($slug)
+    {
+        $latest = Berita::orderBy('created_at', 'DESC')->take(4)->get();
+        $post = Berita::where('slug', '=', $slug)->first();
+        // dd($post);
+        return view('pages.front.single-blog', compact(['post', 'latest']));
+    }
 }
