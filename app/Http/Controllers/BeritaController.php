@@ -45,7 +45,7 @@ class BeritaController extends Controller
         if ($request->tumbnail) {
             $imagePath = request('tumbnail')->store('uploads/berita', 'public');
     
-            $image = Image::make(public_path("storage/{$imagePath}"))->fit(400, 400);
+            $image = Image::make(public_path("storage/{$imagePath}"));
             $image->save();
             $data['tumbnail'] = $imagePath;
         }
