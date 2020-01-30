@@ -604,7 +604,7 @@
                                                 </strong>
                                             </p>
                                             <h4>
-                                                <a href="#">{{ $item->title }}</a>
+                                                <a href="{{ route('single.blog', $item->slug) }}"> {{ $item->title   }}</a>
                                             </h4>
                                             <p>{!! str_limit($item->content, 200) !!}.</p>
                                         </div>
