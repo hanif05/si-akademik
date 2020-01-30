@@ -11,10 +11,6 @@
 |
 */
 
-// Route Front
-Route::get('/', 'FrontController@index')->name('front.index');
-
-
 //Route Login
 Route::get('/login', 'AuthController@index')->name('login');
 Route::post('/validation', 'AuthController@validation');
@@ -78,3 +74,7 @@ Route::group(['middleware' => ['auth', 'checkLevel:1,2,3']], function(){
 	Route::post('/profile/{siswa}', 'ProfileController@updateSiswa')->name('profilesiswa.update');
 
 });
+
+// Route Front
+Route::get('/', 'FrontController@index')->name('front.index');
+Route::get('/{slug}', 'FrontController@singleBlog')->name('single.blog');
