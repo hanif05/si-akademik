@@ -21,7 +21,7 @@
                     </div>
                     <div class="form-group">
                         <label for="" class="control-label">Content</label>
-                        <textarea name="content" id="" cols="30" rows="10" class="form-control"></textarea>
+                        <textarea name="content" id="summary-ckeditor" class="form-control"></textarea>
                     </div>
                     <div class="form-group">
                         <label class="control-label">Upload Tumbnail</label>
@@ -46,3 +46,9 @@
     </div>
 </div>
 @stop
+@push('scripts')
+<script src="//cdn.ckeditor.com/4.13.1/standard/ckeditor.js"></script>
+<script>
+    CKEDITOR.replace( 'summary-ckeditor' );
+</script>
+@endpush
