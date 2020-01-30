@@ -147,7 +147,8 @@ class SiswaController extends Controller
                 return view('layouts.includes._action2', [
                     'data' => $data,
                     'url_edit2' => route('siswa.edit', $data->id),
-                    'url_destroy2' => route('siswa.destroy', $data->id)
+                    'url_destroy2' => route('siswa.destroy', $data->id),
+                    'url_show2' => route('siswa.show', $data->id)
                 ]);
             })
             ->addColumn('foto', function($data){

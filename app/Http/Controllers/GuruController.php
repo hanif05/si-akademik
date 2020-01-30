@@ -153,6 +153,7 @@ class GuruController extends Controller
                 return view('layouts/includes/_action2', [
                     'data' => $data,
                     'url_edit2' => route('guru.edit', $data->id),
+                    'url_show2' => route('guru.show', $data->id),
                     'url_destroy2' => route('guru.destroy', $data->id),
 
 

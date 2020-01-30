@@ -53,7 +53,8 @@ Route::group(['middleware' => ['auth', 'checkLevel:1']], function(){
 	Route::get('/kelas/{kelas}/edit', 'KelasController@edit')->name('kelas.edit');
 	Route::get('/table/kelas', 'KelasController@dataTable')->name('table.kelas');
 
-
+	// Route Berita
+	Route::resource('/berita', 'BeritaController');
 
 });
 

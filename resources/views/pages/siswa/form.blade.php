@@ -17,7 +17,12 @@
 					@csrf
 					<div class="form-group">
 						<label for="nama" class="control-label">Nama</label>
-						<input type="text" class="form-control" id="nama" name="nama">
+						<input type="text" class="form-control @error('nama') is-invalid @enderror" id="nama" name="nama">
+						@error('nama')
+							<span class="invalid-feedback" role="alert">
+								<strong>{{ $message }}</strong>
+							</span>
+						@enderror
 					</div>
 					<div class="form-group">
 						<label for="email" class="control-label">Email</label>
