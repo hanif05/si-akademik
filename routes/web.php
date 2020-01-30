@@ -55,6 +55,7 @@ Route::group(['middleware' => ['auth', 'checkLevel:1']], function(){
 
 	// Route Berita
 	Route::resource('/berita', 'BeritaController');
+	Route::get('/table/berita', 'BeritaController@dataTable')->name('berita.table');
 
 });
 

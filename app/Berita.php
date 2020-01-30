@@ -30,4 +30,12 @@ class Berita extends Model
             ]
         ];
     }
+
+    public function getTumbnail()
+    {
+        if(!$this->tumbnail){
+            return asset('/img/no-thumbnail.png');
+        }
+        return asset('/storage/'.$this->tumbnail);
+    }
 }

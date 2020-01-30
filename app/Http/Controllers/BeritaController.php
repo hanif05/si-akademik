@@ -3,7 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Berita;
+use Intervention\Image\Facades\Image;
 use Illuminate\Http\Request;
+use Yajra\DataTables\Facades\DataTables;
 
 class BeritaController extends Controller
 {
@@ -14,8 +16,7 @@ class BeritaController extends Controller
      */
     public function index()
     {
-        $data = Berita::all();
-        return view('pages.berita.index', compact('data'));
+        return view('pages.berita.index');
     }
 
     /**
@@ -36,7 +37,26 @@ class BeritaController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $data = $request->validate([
+            'title' => 'required',
+            'content' => 'required',
+        ]);
+        // Foto
+        if ($request->tumbnail) {
+            $imagePath = request('tumbnail')->store('uploads/berita', 'public');
+    
+            $image = Image::make(public_path("storage/{$imagePath}"))->fit(400, 400);
+            $image->save();
+            $data['tumbnail'] = $imagePath;
+        }
+
+        $data['user_id'] = auth()->user()->id;
+
+        if ($data) {
+            Berita::create($data);
+            return redirect()->route('berita.index')->with('berhasil', 'Data Berhasil Ditambahkan');
+        }
+
     }
 
     /**
@@ -82,5 +102,17 @@ class BeritaController extends Controller
     public function destroy(Berita $berita)
     {
         //
+    }
+
+    public function DataTable()
+    {
+
+        $data = Berita::join('users', 'berita.user_id', '=', 'users.id')->select('berita.id' , 'berita.title', 'berita.content', 'users.name', 'berita.tumbnail');
+        
+        return DataTables::of($data)
+            ->addColumn('tumbnail', function($data){
+                return '<img src="'.$data->getTumbnail().'" border="0" width="50" class="img-rounded" align="center" />';
+            })
+            ->addIndexColumn()->rawColumns(['tumbnail'])->make(true);
     }
 }

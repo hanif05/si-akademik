@@ -46,22 +46,23 @@
 @stop
 @push('scripts')
     <script>
-    //     $('#datatables').DataTable({
+        $('#datatables').DataTable({
 
-    //         responsive: true,
-    //         processing: true,
-    //         serverSide: true,
-    //         ajax: "{{ route('table.hari') }}",
-    //         columns: [
+            responsive: true,
+            processing: true,
+            serverSide: true,
+            ajax: "{{ route('berita.table') }}",
+            columns: [
 
-    //             { data: 'DT_RowIndex', name: 'id' },
-    //             { data: 'kode_hari', name: 'kode_hari' },
-    //             { data: 'nama_hari', name: 'nama_hari' },
-    //             { data: 'aksi', name: 'aksi' },
+                { data: 'DT_RowIndex', name: 'berita.id' },
+                { data: 'title', name: 'berita.title' },
+                { data: 'content', name: 'berita.content' },
+                { data: 'name', name: 'users.name' },
+                { data: 'tumbnail', name: 'berita.tumbnail' },
 
 
-    //         ]
-    //     });
-    // </script>
+            ]
+        });
+    </script>
 
 @endpush

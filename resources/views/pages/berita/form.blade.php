@@ -20,6 +20,10 @@
                         <input type="text" class="form-control" id="title" name="title">
                     </div>
                     <div class="form-group">
+                        <label for="" class="control-label">Content</label>
+                        <textarea name="content" id="" cols="30" rows="10" class="form-control"></textarea>
+                    </div>
+                    <div class="form-group">
                         <label class="control-label">Upload Tumbnail</label>
                         <div class="input-group">
                             <div class="input-group-prepend">

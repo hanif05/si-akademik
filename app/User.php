@@ -59,6 +59,6 @@ class User extends Authenticatable
 
     public function berita()
     {
-        // 
+        return $this->hasMany(Berita::class);
     }
 }
