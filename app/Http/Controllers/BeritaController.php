@@ -50,6 +50,10 @@ class BeritaController extends Controller
             $data['tumbnail'] = $imagePath;
         }
 
+        if ($request->title) {
+            $data['title'] = ucwords($request->title);
+        }
+
         $data['user_id'] = auth()->user()->id;
 
         if ($data) {
