@@ -27,4 +27,10 @@ class FrontController extends Controller
         
         return view('pages.front.single-blog', compact(['post', 'latest', 'prev', 'next', 'countComment']));
     }
+
+    public function blog()
+    {
+        $post = Berita::orderBy('created_at', 'DESC')->paginate(5);
+        return view('pages.front.blog', compact('post'));
+    }
 }
