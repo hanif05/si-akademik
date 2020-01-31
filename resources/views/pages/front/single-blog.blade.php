@@ -100,31 +100,35 @@
                     <div class="row">
                         <div class="col-lg-6 col-md-6 col-12 nav-left flex-row d-flex justify-content-start align-items-center">
                             <div class="thumb">
-                                <a href="#"><img class="img-fluid" src="img/blog/prev.jpg" alt=""></a>
+                            @if (isset($prev))
+                                <a href="{{ route('single.blog', $prev->slug) }}"><img class="img-fluid" src="{{ $prev->getTumbnail() }}" alt="" style="width:60px;height:60px"></a>
                             </div>
                             <div class="arrow">
-                                <a href="#"><span class="lnr text-white lnr-arrow-left"></span></a>
+                                <a href="{{ route('single.blog', $prev->slug) }}"><span class="lnr text-white lnr-arrow-left"></span></a>
                             </div>
                             <div class="detials">
-                                <p>Prev Post</p>
-                                <a href="#">
-                                    <h4>Space The Final Frontier</h4>
+                            <p>Prev Post</p>
+                                <a href="{{ route('single.blog', $prev->slug) }}">
+                                    <h4>{{ $prev->title }}</h4>
                                 </a>
+                            @endif
                             </div>
                         </div>
                         <div class="col-lg-6 col-md-6 col-12 nav-right flex-row d-flex justify-content-end align-items-center">
+                            @if (isset($next))
                             <div class="detials">
                                 <p>Next Post</p>
-                                <a href="#">
-                                    <h4>Telescopes 101</h4>
-                                </a>
+                                    <a href="{{ route('single.blog', $next->slug) }}">
+                                        <h4>{{ $next->title }}</h4>
+                                    </a>
                             </div>
                             <div class="arrow">
-                                <a href="#"><span class="lnr text-white lnr-arrow-right"></span></a>
+                                <a href="{{ route('single.blog', $next->slug) }}"><span class="lnr text-white lnr-arrow-right"></span></a>
                             </div>
                             <div class="thumb">
-                                <a href="#"><img class="img-fluid" src="img/blog/next.jpg" alt=""></a>
+                                <a href="{{ route('single.blog', $next->slug) }}"><img class="img-fluid" src="{{ $next->getTumbnail() }}" alt="" style="width:60px;height:60px"></a>
                             </div>
+                            @endif
                         </div>
                     </div>
                 </div>
