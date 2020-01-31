@@ -76,7 +76,12 @@ Route::group(['middleware' => ['auth', 'checkLevel:1,2,3']], function(){
 });
 
 // Route Front
+// Route comment
 Route::get('/comments', 'CommentsController@index');
 Route::post('/comments/store', 'CommentsController@store')->name('comments.store');
+
+// Route Blog
+Route::get('/blog', 'FrontController@blog')->name('blog');
+
 Route::get('/', 'FrontController@index')->name('front.index');
 Route::get('/{slug}', 'FrontController@singleBlog')->name('single.blog');
