@@ -115,7 +115,7 @@ class BeritaController extends Controller
         
         return DataTables::of($data)
             ->addColumn('tumbnail', function($data){
-                return '<img src="'.$data->getTumbnail().'" border="0" width="50" class="img-rounded" align="center" />';
+                return '<img src="'.$data->getTumbnail().'" border="0" width="100" class="img-rounded" align="center" />';
             })
             ->addIndexColumn()->rawColumns(['tumbnail'])->make(true);
     }
