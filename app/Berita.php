@@ -16,6 +16,11 @@ class Berita extends Model
         return $this->belongsTo(User::class);
     }
 
+    public function comments()
+    {
+        return $this->morphMany(Comments::class, 'commentable')->whereNull('parent_id');
+    }
+
     use Sluggable;
     /**
     * Return the sluggable configuration array for this model.
