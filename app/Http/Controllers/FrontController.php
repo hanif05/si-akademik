@@ -22,7 +22,9 @@ class FrontController extends Controller
         $prev = Berita::where('id', '<', $post->id)->orderBy('id', 'DESC')->first();
         
         $next = Berita::where('id', '>', $post->id)->orderBy('id')->first();
+
+        $countComment = $post->comments()->count();
         
-        return view('pages.front.single-blog', compact(['post', 'latest', 'prev', 'next']));
+        return view('pages.front.single-blog', compact(['post', 'latest', 'prev', 'next', 'countComment']));
     }
 }
