@@ -111,12 +111,17 @@ class BeritaController extends Controller
     public function DataTable()
     {
 
-        $data = Berita::join('users', 'berita.user_id', '=', 'users.id')->select('berita.id' , 'berita.title', 'berita.content', 'users.name', 'berita.tumbnail');
+        $data = Berita::join('users', 'berita.user_id', '=', 'users.id')
+                        ->select('berita.id' , 'berita.title', 'berita.content', 'users.name', 'berita.tumbnail')
+                        ->orderBy('berita.created_at', 'DESC');
         
         return DataTables::of($data)
             ->addColumn('tumbnail', function($data){
                 return '<img src="'.$data->getTumbnail().'" border="0" width="100" class="img-rounded" align="center" />';
             })
-            ->addIndexColumn()->rawColumns(['tumbnail'])->make(true);
+            ->addColumn('content', function($data){
+                return str_limit($data->content);
+            })
+            ->addIndexColumn()->rawColumns(['tumbnail', 'content'])->make(true);
     }
 }
