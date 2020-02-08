@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Petugas;
 use Illuminate\Http\Request;
+use Yajra\DataTables\Facades\DataTables;
 
 class PetugasController extends Controller
 {
@@ -14,7 +15,12 @@ class PetugasController extends Controller
      */
     public function index()
     {
-        //
+        
+        if (request()->ajax()) {
+            $data = Petugas::all();
+            return DataTables::of($data)->addIndexColumn()->make(true);
+        }
+        return view('pages.petugas.index');
     }
 
     /**
@@ -35,7 +41,14 @@ class PetugasController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        Petugas::updateOrCreate(['id' => $request->id_petugas], [
+            'name' => $request->name,
+            'tmpt_lahir' => $request->tmpt_lahir,
+            'tgl_lahir' => $request->tgl_lahir,
+        ]);
+        
+        
+        return response()->json(['success' => 'Data Berhasil Disimpan', 201]);
     }
 
     /**
