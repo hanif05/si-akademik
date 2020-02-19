@@ -13,6 +13,7 @@
     </div>
     <div class="row">
         <div class="col-12">
+            <button data-toggle="modal" data-target="#import" class="btn-sm btn-primary" title="import excel">Import Excel <i class="fa fa-file-excel"></i></button>
             <div class="d-flex justify-content-end text-right">
                 <a href="javascript:void(0)" class="btn btn-primary fa fa-plus" id="tambah" title="Tambah Data"></a>
             </div>
@@ -84,6 +85,30 @@
     </div>
 </div>
 <!-- /.modal -->
+
+<!-- Modal Import -->
+<div class="modal fade" id="import" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+        <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Import</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+        <form action="{{ route('petugas.import') }}" method="post" class="form" enctype="multipart/form-data">
+            @csrf
+            <div class="modal-body">
+                <input type="file" class="form-control" name="excel">
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="submit" class="btn btn-primary">Save changes</button>
+            </div>
+        </form>
+        </div>
+    </div>
+    </div>
 
 @stop
 
