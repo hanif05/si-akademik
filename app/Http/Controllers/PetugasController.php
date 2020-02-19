@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Petugas;
 use Illuminate\Http\Request;
 use Yajra\DataTables\Facades\DataTables;
+use Excel;
 
 class PetugasController extends Controller
 {
@@ -104,8 +105,13 @@ class PetugasController extends Controller
         if(!$petugas->delete()) {
             return response()->json(['message' => 'Error'], 404);
         }
-        
+
         return response()->json(['message' => 'Success Delete Data'], 200);
         
+    }
+
+    public function import()
+    {
+        Excel::import(new \App\Imports\PetugasImport, request()->file('excel'));
     }
 }
