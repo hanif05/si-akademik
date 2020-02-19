@@ -18,7 +18,15 @@ class PetugasController extends Controller
         
         if (request()->ajax()) {
             $data = Petugas::all();
-            return DataTables::of($data)->addIndexColumn()->make(true);
+            return DataTables::of($data)->addIndexColumn()
+                ->addColumn('aksi', function($data){
+                    // $edit = route('petugas.edit', $data->id);
+                    $aksi = '<a href="javascript:void(0)" data-id="'.$data->id.'" data-toogle="tooltip" class="edit fa fa-pencil editPetugas"></a> | ';
+                    $aksi = $aksi. '<a href="javascript:void(0)" data-id="'.$data->id.'" data-toogle="tooltip" class="fa fa-trash deletePetugas"></a>';
+                    return $aksi;
+                })
+                ->rawColumns(['aksi'])
+                ->make(true);
         }
         return view('pages.petugas.index');
     }
@@ -41,7 +49,7 @@ class PetugasController extends Controller
      */
     public function store(Request $request)
     {
-        Petugas::updateOrCreate(['id' => $request->id_petugas], [
+        Petugas::updateOrCreate(['id' => $request->id], [
             'name' => $request->name,
             'tmpt_lahir' => $request->tmpt_lahir,
             'tgl_lahir' => $request->tgl_lahir,
@@ -70,7 +78,7 @@ class PetugasController extends Controller
      */
     public function edit(Petugas $petugas)
     {
-        //
+        return response()->json($petugas);
     }
 
     /**
