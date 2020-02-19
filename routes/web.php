@@ -54,8 +54,9 @@ Route::group(['middleware' => ['auth', 'checkLevel:1']], function(){
 	Route::get('/table/berita', 'BeritaController@dataTable')->name('berita.table');
 
 	// Route Petugas
-	Route::resource('petugas', 'PetugasController')->except('update', 'create', 'show', 'edit');
+	Route::resource('petugas', 'PetugasController')->only('index', 'store');
 	Route::get('petugas/{petugas}/edit', 'PetugasController@edit')->name('petugas.edit');
+	Route::delete('petugas/{petugas}', 'PetugasController@destroy')->name('petugas.destroy');
 
 });
 
