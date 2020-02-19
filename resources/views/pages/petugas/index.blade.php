@@ -158,6 +158,24 @@
                 }
             });
         });
+
+        $('body').on('click', '.deletePetugas', function(){
+            var id = $(this).data('id');
+            let url = "{{ route('petugas.index') }}"+'/'+id;
+            confirm("Are You Sure Want To Delete This!");
+
+            $.ajax({
+                type: "DELETE",
+                url: url,
+                success: function(data) {
+                    console.log(data.message);
+                    $('#datatables').DataTable().ajax.reload();
+                },
+                error: function(data){
+                    console.log('Error:', data);
+                }
+            });
+        });
     </script>
 
 
