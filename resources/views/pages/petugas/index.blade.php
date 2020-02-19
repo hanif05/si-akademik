@@ -28,6 +28,7 @@
                                     <th>Nama</th>
                                     <th>Tempat Lahir</th>
                                     <th>Tanggal Lahir</th>
+                                    <th>Aksi</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -110,8 +111,7 @@
                 { data: 'name', name: 'name' },
                 { data: 'tmpt_lahir', name: 'tmpt_lahir' },
                 { data: 'tgl_lahir', name: 'tgl_lahir' },
-
-
+                { data: 'aksi', name: 'aksi' },
             ]
         });
 
@@ -119,9 +119,24 @@
             $('#saveBtn').val('Create');
             $('#id_petugas').val('');
             $('#form').trigger('reset');
-            $('#modelHeadong').html('Create New Petugas');
+            $('#modelHeading').html('Create New Petugas');
             $('#modal').modal('show');
         });
+
+        $('body').on('click', '.editPetugas', function(){
+            var id = $(this).data('id');
+
+            $.get("{{ route('petugas.index') }}"+'/'+id+'/edit', function(data){
+                $('#modelHeading').html('Edit Petugas');
+                $('#modal').modal('show');
+                $('#id_petugas').val(data.id);
+                $('#name').val(data.name);
+                $('#tmpt_lahir').val(data.tmpt_lahir);
+                $('#tgl_lahir').val(data.tgl_lahir);
+                console.log(data);
+            })
+            console.log(id);
+        })        
 
         $('#saveBtn').click(function(e){
             e.preventDefault();
