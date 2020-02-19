@@ -57,6 +57,7 @@ Route::group(['middleware' => ['auth', 'checkLevel:1']], function(){
 	Route::resource('petugas', 'PetugasController')->only('index', 'store');
 	Route::get('petugas/{petugas}/edit', 'PetugasController@edit')->name('petugas.edit');
 	Route::delete('petugas/{petugas}', 'PetugasController@destroy')->name('petugas.destroy');
+	Route::post('petugas/import', 'PetugasController@import')->name('petugas.import');
 
 });
 
