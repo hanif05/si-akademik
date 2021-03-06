@@ -53,15 +53,20 @@
 					<hr> </div>
 					<div class="card-body"> <small class="text-muted">Email address </small>
 						<h6>{{ $user->email }}</h6> <small class="text-muted p-t-30 db">Phone</small>
-						<h6>{{ $user->guru->telp ?? $user->siswa->no_hp }}</h6> <small class="text-muted p-t-30 db">Address</small>
-						<h6>{{ $user->guru->alamat ?? $user->siswa->alamat }}</h6>
+						@if ($user->level_id != 1)
+							<h6>{{ $user->guru->telp ?? $user->siswa->no_hp }}</h6> <small class="text-muted p-t-30 db">Address</small>
+							<h6>{{ $user->guru->alamat ?? $user->siswa->alamat }}</h6>
+						@else
+							<h6>08324232</h6> <small class="text-muted p-t-30 db">Address</small>
+							<h6>Jakarta</h6>
+						@endif
 						<div class="map-box">
 							<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d470029.1604841957!2d72.29955005258641!3d23.019996818380896!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x395e848aba5bd449%3A0x4fcedd11614f6516!2sAhmedabad%2C+Gujarat!5e0!3m2!1sen!2sin!4v1493204785508" style="border:0" allowfullscreen="" width="100%" height="150" frameborder="0"></iframe>
 						</div> <small class="text-muted p-t-30 db">Social Profile</small>
 						<br>
-						<button class="btn btn-circle btn-secondary"><i class="fab fa-facebook-f"></i></button>
-						<button class="btn btn-circle btn-secondary"><i class="fab fa-twitter"></i></button>
-						<button class="btn btn-circle btn-secondary"><i class="fab fa-youtube"></i></button>
+						<button class="btn btn-circle btn-secondary"><i class="fa fa-facebook-f"></i></button>
+						<button class="btn btn-circle btn-secondary"><i class="fa fa-twitter"></i></button>
+						<button class="btn btn-circle btn-secondary"><i class="fa fa-youtube"></i></button>
 					</div>
 				</div>
 			</div>
